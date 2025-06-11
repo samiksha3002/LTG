@@ -47,22 +47,22 @@ export default function Footer() {
           </h3>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="hover:text-orange-500">
+              <a href="/" className="hover:text-orange-500">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-orange-500">
+              <a href="about-us" className="hover:text-orange-500">
                 About us
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-orange-500">
+              <a href="LED" className="hover:text-orange-500">
                 Our Services
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-orange-500">
+              <a href="contact-us" className="hover:text-orange-500">
                 Contact Us
               </a>
             </li>
@@ -74,7 +74,7 @@ export default function Footer() {
           <h3 className="text-orange-500 font-semibold text-lg mb-4">
             Services
           </h3>
-          import Link from "next/link";
+
           <ul className="space-y-2 text-gray-700">
             <li>
               <Link href="/LED" className="hover:text-black transition">

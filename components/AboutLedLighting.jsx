@@ -6,19 +6,13 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 
 export default function AboutLedLighting({
-  title = "About Led Lighting",
-  paragraphs = [
-    "Lighting is more than visibility — it’s about atmosphere, mood, and energy. At LTG, our LED lighting solutions combine style, sustainability, and smart technology to transform spaces of every scale. Whether you’re designing a cozy home, a sleek office, or a grand hotel, our LED options offer powerful performance with stunning aesthetics. From ambient accents to focused task lighting, every fixture is designed to be energy-efficient, long-lasting, and visually captivating. With a wide range of customizable designs, we help you create environments that feel as good as they look — all while saving energy and reducing costs.",
-  ],
-  imageSrc = "/img1.jpg",
-  imageAlt = "LED Lighting",
+  title = "Service Title",
+  paragraphs = [],
+  imageSrc = "",
+  imageAlt = "",
 }) {
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      easing: "ease-in-out",
-      once: true,
-    });
+    AOS.init({ duration: 800, easing: "ease-in-out", once: true });
   }, []);
 
   return (
@@ -36,7 +30,7 @@ export default function AboutLedLighting({
       {paragraphs.map((para, index) => (
         <p
           key={index}
-          className="text-gray-700 mb-3"
+          className="text-gray-700 mb-3 leading-relaxed"
           data-aos="fade-up"
           data-aos-delay={index * 100}
         >
@@ -58,12 +52,13 @@ export default function AboutLedLighting({
             priority
           />
 
-          {/* Centered Caption Overlay */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-60 px-5 py-2 rounded-md">
-            <p className="text-white text-center text-base font-medium">
-              {imageAlt}
-            </p>
-          </div>
+          {imageAlt && (
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-60 px-5 py-2 rounded-md">
+              <p className="text-white text-center text-base font-medium">
+                {imageAlt}
+              </p>
+            </div>
+          )}
         </div>
       )}
     </div>
