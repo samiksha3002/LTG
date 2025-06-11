@@ -5,14 +5,14 @@ import Image from "next/image";
 export default function WhyChooseUs() {
   return (
     <section className="relative bg-[#f8eae1] py-20 md:py-28 px-6 overflow-hidden">
-      {/* Background Pattern - vertically centered and top-aligned */}
+      {/* Background Pattern */}
       <div
-        className="absolute inset-0 md:inset-y-0 md:left-0 w-full md:w-1/2 bg-no-repeat bg-contain md:bg-cover bg-center md:bg-left-top mix-blend-multiply opacity-20 pointer-events-none animate-slow-zoom"
+        className="absolute top-0 left-0 w-full h-72 md:h-full md:w-1/2 bg-no-repeat bg-contain md:bg-cover bg-center md:bg-left-top mix-blend-multiply opacity-20 pointer-events-none animate-slow-zoom"
         style={{ backgroundImage: "url('/Bg-img.png')" }}
       />
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center relative z-10">
-        {/* Left Side with logo */}
+        {/* Left Side with Logo */}
         <div className="relative flex justify-center items-center px-6 md:px-12 py-8 md:py-12 h-64 md:min-h-[400px] z-10">
           <div className="relative z-10 animate-float">
             <Image

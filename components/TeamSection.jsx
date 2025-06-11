@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const teamMembers = [
   {
@@ -25,11 +29,8 @@ const teamMembers = [
 ];
 
 export default function TeamSection() {
-  const [fadeIn, setFadeIn] = useState(false);
-
   useEffect(() => {
-    const timer = setTimeout(() => setFadeIn(true), 100);
-    return () => clearTimeout(timer);
+    AOS.init({ duration: 800, easing: "ease-in-out", once: true });
   }, []);
 
   return (
@@ -49,12 +50,12 @@ export default function TeamSection() {
         className="absolute bottom-4 right-4 opacity-30 pointer-events-none z-0"
       />
 
-      <div
-        className={`relative z-10 max-w-7xl mx-auto transition-all duration-1000 ${
-          fadeIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
-      >
-        <div className="text-center mb-16 transition-all duration-1000 delay-200">
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <div
+          className="text-center mb-16"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           <p className="text-orange-500 mb-2 text-lg">— Our Team</p>
           <h2 className="text-4xl lg:text-5xl font-bold text-black">
             Meet Our Team
@@ -68,10 +69,9 @@ export default function TeamSection() {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className={`bg-white rounded-xl shadow-lg p-6 text-center transition-all duration-700 ease-out transform ${
-                fadeIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-              style={{ transitionDelay: `${index * 150 + 300}ms` }}
+              data-aos="zoom-in-up"
+              data-aos-delay={index * 200 + 200}
+              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 p-6 text-center transform hover:scale-[1.03]"
             >
               <div className="mb-4 flex justify-center">
                 <Image

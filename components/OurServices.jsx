@@ -53,6 +53,14 @@ export default function OurServices() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  const handleSwipe = (offsetX) => {
+    if (offsetX < -50 && activeIndex < services.length - 1) {
+      setActiveIndex((prev) => prev + 1);
+    } else if (offsetX > 50 && activeIndex > 0) {
+      setActiveIndex((prev) => prev - 1);
+    }
+  };
+
   return (
     <div className="bg-[#f9f3ef] py-12 text-black">
       <div className="text-center mb-10">
@@ -65,14 +73,18 @@ export default function OurServices() {
         </p>
       </div>
 
-      {/* Responsive layout */}
       <div className="md:flex md:overflow-x-auto md:no-scrollbar pl-4 pr-4 gap-4 flex-wrap md:flex-nowrap flex-col md:flex-row">
         {services.map((service, index) => {
           const isActive = index === activeIndex;
 
           return (
-            <div
+            <motion.div
               key={index}
+              drag={isMobile ? "x" : false}
+              dragConstraints={{ left: 0, right: 0 }}
+              onDragEnd={(e, info) => {
+                handleSwipe(info.offset.x);
+              }}
               onClick={() => setActiveIndex(index)}
               className={`cursor-pointer rounded-2xl relative group transition-all duration-500 ease-in-out
                 ${isActive && !isMobile ? "md:w-[65vw]" : "md:w-[100px]"}
@@ -137,7 +149,7 @@ export default function OurServices() {
                   </div>
                 </div>
               )}
-            </div>
+            </motion.div>
           );
         })}
       </div>

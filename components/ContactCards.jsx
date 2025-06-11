@@ -1,4 +1,9 @@
+"use client";
+
+import { useEffect } from "react";
 import { PhoneCall, Mail, MapPin, Clock } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const contactData = [
   {
@@ -34,13 +39,19 @@ const contactData = [
 ];
 
 export default function ContactCards() {
+  useEffect(() => {
+    AOS.init({ duration: 800, easing: "ease-in-out", once: true });
+  }, []);
+
   return (
     <section className="bg-[#fcfcfc] py-20 px-4 md:px-8">
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {contactData.map((item, index) => (
           <div
             key={index}
-            className="relative text-center bg-white border border-gray-100 shadow-xl rounded-2xl px-6 py-12 transition-transform hover:-translate-y-1 hover:shadow-2xl"
+            data-aos="fade-up"
+            data-aos-delay={index * 150}
+            className="relative text-center bg-white border border-gray-100 shadow-xl rounded-2xl px-6 py-12 transition-transform hover:-translate-y-1.5 hover:shadow-2xl duration-300"
           >
             {/* Icon Container */}
             <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">

@@ -1,5 +1,9 @@
 "use client";
 
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import {
   FaFacebookF,
   FaInstagram,
@@ -9,17 +13,20 @@ import {
 } from "react-icons/fa";
 
 export default function Footer() {
+  useEffect(() => {
+    AOS.init({ duration: 800, easing: "ease-in-out", once: true });
+  }, []);
+
   return (
     <footer className="bg-[#f3c9aa] text-black pt-10 pb-8 px-4 md:px-6 lg:px-8">
-      {/* Inner white box with padding and spacing */}
+      {/* Inner white box */}
       <div className="bg-white rounded-2xl p-10 md:p-10 lg:p-12 grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Column 1 - Logo and Description */}
-        <div>
+        {/* Column 1 */}
+        <div data-aos="fade-up" data-aos-delay="0">
           <img src="/logo.png" alt="LTG Logo" className="h-10 mb-4" />
           <p className="text-sm mb-4">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat.
+            "Crafting lighting solutions that inspire and elevate every
+            environment."
           </p>
           <div className="flex items-start gap-2 mt-4 text-orange-500 font-semibold">
             <span className="text-xl">📞</span>
@@ -32,8 +39,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Column 2 - Quick Links */}
-        <div>
+        {/* Column 2 */}
+        <div data-aos="fade-up" data-aos-delay="100">
           <h3 className="text-orange-500 font-semibold text-lg mb-4">
             Quick links
           </h3>
@@ -61,8 +68,8 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 3 - Services */}
-        <div>
+        {/* Column 3 */}
+        <div data-aos="fade-up" data-aos-delay="200">
           <h3 className="text-orange-500 font-semibold text-lg mb-4">
             Services
           </h3>
@@ -75,8 +82,8 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 4 - Contact Info */}
-        <div>
+        {/* Column 4 */}
+        <div data-aos="fade-up" data-aos-delay="300">
           <h3 className="text-orange-500 font-semibold text-lg mb-4">
             Contact Us
           </h3>
@@ -94,9 +101,12 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Footer Bottom Section */}
-      {/* Footer Bottom Section */}
-      <div className="flex flex-col md:flex-row items-center justify-between mt-6 text-sm">
+      {/* Footer Bottom */}
+      <div
+        data-aos="fade-up"
+        data-aos-delay="400"
+        className="flex flex-col md:flex-row items-center justify-between mt-6 text-sm"
+      >
         <p className="text-center md:text-left w-full md:w-auto">
           Copyright © 2025 Lumitec Global
         </p>
