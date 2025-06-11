@@ -120,7 +120,7 @@ export default function Footer() {
             Othman center, Ibn Khaldoun Street, mezzanine floor, office No M15,
             Hawalli, Kuwait, Hawalli, Al ‘Āşimah, Kuwait 4261
           </p>
-          <Link href="/contact">
+          <Link href="/contact-us">
             <button className="bg-black text-white px-4 py-2 rounded-md flex items-center gap-2 hover:bg-gray-800 transition">
               Contact Us Today →
             </button>
