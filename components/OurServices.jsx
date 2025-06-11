@@ -28,7 +28,7 @@ const services = [
   },
   {
     title: "Mep Services",
-    desc: "Whether it’s geolocation integration or smart mapping features, our solutions ensure precise navigation, accurate tracking, and seamless user experiences in any smart application.",
+    desc: "Efficiency built in – we integrate mechanical, electrical, and plumbing systems for flawless functionality.",
     image: "/img1.jpg",
     iconImg: "/ser4.png",
     link: "/Mep",
