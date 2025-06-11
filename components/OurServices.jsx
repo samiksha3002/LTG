@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const services = [
   {
-    title: "Led Lightning",
+    title: "Led Lighting",
     desc: "Illuminate your environment with advanced LED lighting solutions. Designed for energy efficiency and visual appeal, our lighting setups are perfect for modern homes and smart spaces.",
     image: "/img1.jpg",
     iconImg: "/Ser2.png",
@@ -27,7 +27,7 @@ const services = [
     link: "/Automation",
   },
   {
-    title: "Map Services",
+    title: "Mep Services",
     desc: "Whether it’s geolocation integration or smart mapping features, our solutions ensure precise navigation, accurate tracking, and seamless user experiences in any smart application.",
     image: "/img1.jpg",
     iconImg: "/ser4.png",
