@@ -1,4 +1,6 @@
-import { useState } from "react";
+"use client";
+
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -42,6 +44,14 @@ const services = [
 
 export default function OurServices() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <div className="bg-[#f9f3ef] py-12 text-black">
@@ -55,7 +65,7 @@ export default function OurServices() {
         </p>
       </div>
 
-      {/* Layout switch based on screen size */}
+      {/* Responsive layout */}
       <div className="md:flex md:overflow-x-auto md:no-scrollbar pl-4 pr-4 gap-4 flex-wrap md:flex-nowrap flex-col md:flex-row">
         {services.map((service, index) => {
           const isActive = index === activeIndex;
@@ -65,7 +75,7 @@ export default function OurServices() {
               key={index}
               onClick={() => setActiveIndex(index)}
               className={`cursor-pointer rounded-2xl relative group transition-all duration-500 ease-in-out
-                ${isActive ? "md:w-[65vw]" : "md:w-[100px]"}
+                ${isActive && !isMobile ? "md:w-[65vw]" : "md:w-[100px]"}
                 w-full h-[500px] overflow-hidden flex-shrink-0 mb-6 md:mb-0`}
             >
               <img
@@ -79,7 +89,7 @@ export default function OurServices() {
                 }`}
               ></div>
 
-              {isActive || window.innerWidth < 768 ? (
+              {isActive || isMobile ? (
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
