@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Link from "next/link";
 
 import {
   FaFacebookF,
@@ -73,12 +74,36 @@ export default function Footer() {
           <h3 className="text-orange-500 font-semibold text-lg mb-4">
             Services
           </h3>
-          <ul className="space-y-2">
-            <li>Led Lighting</li>
-            <li>Electrical Works</li>
-            <li>Home Automation</li>
-            <li>Mep Services</li>
-            <li>Fit Out Constructions</li>
+          import Link from "next/link";
+          <ul className="space-y-2 text-gray-700">
+            <li>
+              <Link href="/LED" className="hover:text-black transition">
+                Led Lighting
+              </Link>
+            </li>
+            <li>
+              <Link href="/Electrical" className="hover:text-black transition">
+                Electrical Works
+              </Link>
+            </li>
+            <li>
+              <Link href="/Automation" className="hover:text-black transition">
+                Home Automation
+              </Link>
+            </li>
+            <li>
+              <Link href="/Mep" className="hover:text-black transition">
+                Mep Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/constructions"
+                className="hover:text-black transition"
+              >
+                Fit Out Constructions
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -95,9 +120,11 @@ export default function Footer() {
             Othman center, Ibn Khaldoun Street, mezzanine floor, office No M15,
             Hawalli, Kuwait, Hawalli, Al ‘Āşimah, Kuwait 4261
           </p>
-          <button className="bg-black text-white px-4 py-2 rounded-md flex items-center gap-2 hover:bg-gray-800 transition">
-            Contact Us Today →
-          </button>
+          <Link href="/contact">
+            <button className="bg-black text-white px-4 py-2 rounded-md flex items-center gap-2 hover:bg-gray-800 transition">
+              Contact Us Today →
+            </button>
+          </Link>
         </div>
       </div>
 
