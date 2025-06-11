@@ -17,19 +17,38 @@ export default function Header() {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="bg-[#f7f7f5] border-b border-gray-200 shadow-sm fixed top-0 w-full z-50"
     >
-      <div className="flex items-center justify-between py-2 px-4">
-        {/* Logo on far left */}
-        <Link href="/" className="pl-2">
+      {/* Top Header Bar */}
+      <div className="flex items-center justify-between py-2 px-4 md:px-6">
+        {/* Left: Hamburger */}
+        <div className="md:hidden">
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? (
+              <X size={28} className="text-black" />
+            ) : (
+              <Menu size={28} className="text-black" />
+            )}
+          </button>
+        </div>
+
+        {/* Center: Logo */}
+        <Link href="/" className="flex-1 flex justify-center md:justify-start">
           <Image
             src="/logo.png"
             alt="LTG Logo"
             width={160}
             height={100}
-            className="object-contain cursor-pointer"
+            className="object-contain cursor-pointer md:w-[160px] md:h-[100px] w-[100px] h-[60px]"
           />
         </Link>
 
-        {/* Desktop Navigation aligned to the right */}
+        {/* Right: Phone Icon (Mobile) */}
+        <div className="md:hidden">
+          <a href="tel:96566612349">
+            <Phone size={24} className="text-black" />
+          </a>
+        </div>
+
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center justify-end flex-1">
           <div className="flex items-center space-x-10 text-sm font-semibold text-gray-800 pr-4">
             <Link href="/" className="hover:text-black transition-all">
@@ -102,7 +121,7 @@ export default function Header() {
             </Link>
 
             {/* Call Button */}
-            <div className="flex items-center gap-2 border px-4 py-2 rounded-md border-black hover:shadow-md transition">
+            <div className="hidden md:flex items-center gap-2 border px-4 py-2 rounded-md border-black hover:shadow-md transition">
               <Phone size={20} className="text-black" />
               <div className="text-sm leading-tight">
                 <div className="text-[10px] tracking-wider">CALL US ON</div>
@@ -111,55 +130,53 @@ export default function Header() {
             </div>
           </div>
         </div>
-
-        {/* Mobile menu icon */}
-        <div className="md:hidden pr-2">
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Fullscreen Mobile Navigation */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="md:hidden bg-white text-black w-full px-6 py-4 space-y-4 border-t"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-md z-40 flex flex-col items-center justify-center space-y-6 text-white text-lg font-semibold"
           >
-            <Link href="/" className="block">
+            <Link href="/" onClick={() => setMobileMenuOpen(false)}>
               HOME
             </Link>
-            <Link href="/about-us" className="block">
+            <Link href="/about-us" onClick={() => setMobileMenuOpen(false)}>
               ABOUT US
             </Link>
-            <Link href="/LED" className="block">
+            <Link href="/LED" onClick={() => setMobileMenuOpen(false)}>
               LED Lighting
             </Link>
-            <Link href="/Electrical" className="block">
+            <Link href="/Electrical" onClick={() => setMobileMenuOpen(false)}>
               Electrical Works
             </Link>
-            <Link href="/Automation" className="block">
+            <Link href="/Automation" onClick={() => setMobileMenuOpen(false)}>
               Home Automation
             </Link>
-            <Link href="/Mep" className="block">
+            <Link href="/Mep" onClick={() => setMobileMenuOpen(false)}>
               MEP Services
             </Link>
-            <Link href="/Constructions" className="block">
+            <Link
+              href="/Constructions"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               Fit Out Constructions
             </Link>
-            <Link href="/gallery" className="block">
+            <Link href="/gallery" onClick={() => setMobileMenuOpen(false)}>
               GALLERY
             </Link>
-            <Link href="/contact-us" className="block">
+            <Link href="/contact-us" onClick={() => setMobileMenuOpen(false)}>
               CONTACT US
             </Link>
-            <div className="pt-4 border-t mt-4">
-              <div className="text-xs text-gray-500 mb-1">CALL US ON</div>
-              <div className="text-base font-semibold">(965) 666-12349</div>
-            </div>
+            <a
+              href="tel:96566612349"
+              className="mt-4 border border-white px-4 py-2 rounded-md"
+            >
+              Call Us: (965) 666-12349
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

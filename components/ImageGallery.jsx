@@ -20,7 +20,7 @@ const albums = {
     "/G4.jpg",
     "/G5.jpg",
     "/G6.jpg",
-    "/G7.jpg",
+  "/G7.jpg",
   ],
 };
 

@@ -19,7 +19,8 @@ export default function ProjectsShowcase() {
     const container = scrollRef.current;
     if (!container) return;
 
-    const scrollAmount = 320;
+    const scrollAmount = window.innerWidth < 768 ? window.innerWidth : 320;
+
     container.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
@@ -44,7 +45,7 @@ export default function ProjectsShowcase() {
         {/* Left Arrow */}
         <button
           onClick={() => scroll("left")}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 float-hover"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 float-hover hidden md:block"
         >
           <ChevronLeft className="w-10 h-10 text-white drop-shadow-md" />
         </button>
@@ -57,7 +58,7 @@ export default function ProjectsShowcase() {
           {projects.map((item, i) => (
             <div
               key={i}
-              className="group min-w-[280px] md:min-w-[320px] rounded-xl overflow-hidden fade-in"
+              className="group min-w-full md:min-w-[320px] rounded-xl overflow-hidden fade-in"
               style={{ animationDelay: `${i * 0.2}s` }}
             >
               <div className="relative h-[400px]">
@@ -79,18 +80,13 @@ export default function ProjectsShowcase() {
         {/* Right Arrow */}
         <button
           onClick={() => scroll("right")}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 float-hover"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 float-hover hidden md:block"
         >
           <ChevronRight className="w-10 h-10 text-white drop-shadow-md" />
         </button>
       </div>
 
       <style jsx>{`
-        .writing-vertical {
-          writing-mode: vertical-rl;
-          text-orientation: mixed;
-        }
-
         .no-scrollbar::-webkit-scrollbar {
           display: none;
         }
@@ -100,7 +96,6 @@ export default function ProjectsShowcase() {
           scrollbar-width: none;
         }
 
-        /* Fade-in animation */
         .fade-in {
           opacity: 0;
           animation: fadeInUp 1s forwards ease-out;
@@ -117,10 +112,10 @@ export default function ProjectsShowcase() {
           }
         }
 
-        /* Floating hover effect */
         .float-hover {
           transition: transform 0.3s ease;
         }
+
         .float-hover:hover {
           transform: translateY(-5px);
         }

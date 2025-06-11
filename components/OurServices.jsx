@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link"; // Make sure you're using Next.js
+import Link from "next/link";
 
 const services = [
   {
@@ -55,78 +55,81 @@ export default function OurServices() {
         </p>
       </div>
 
-      <div className="flex overflow-x-auto no-scrollbar pl-10 pr-10 gap-4">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            onClick={() => setActiveIndex(index)}
-            className={`cursor-pointer flex-shrink-0 rounded-2xl relative group transition-all duration-500 ease-in-out ${
-              index === activeIndex ? "w-[65vw]" : "w-[100px]"
-            } h-[500px] overflow-hidden`}
-          >
-            <img
-              src={service.image}
-              alt={service.title}
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div
-              className={`absolute inset-0 bg-black/60 transition-opacity duration-300 ${
-                index === activeIndex ? "opacity-100" : "opacity-60"
-              }`}
-            ></div>
+      {/* Layout switch based on screen size */}
+      <div className="md:flex md:overflow-x-auto md:no-scrollbar pl-4 pr-4 gap-4 flex-wrap md:flex-nowrap flex-col md:flex-row">
+        {services.map((service, index) => {
+          const isActive = index === activeIndex;
 
-            {index === activeIndex ? (
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                className="relative z-10 p-10 text-white h-full flex flex-col justify-between"
-              >
-                <div>
-                  <h3 className="text-4xl font-semibold mb-4 flex items-center justify-between">
-                    <span className="flex items-center gap-2">
-                      <span className="text-orange-500 text-5xl">
+          return (
+            <div
+              key={index}
+              onClick={() => setActiveIndex(index)}
+              className={`cursor-pointer rounded-2xl relative group transition-all duration-500 ease-in-out
+                ${isActive ? "md:w-[65vw]" : "md:w-[100px]"}
+                w-full h-[500px] overflow-hidden flex-shrink-0 mb-6 md:mb-0`}
+            >
+              <img
+                src={service.image}
+                alt={service.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div
+                className={`absolute inset-0 bg-black/60 transition-opacity duration-300 ${
+                  isActive ? "opacity-100" : "opacity-60"
+                }`}
+              ></div>
+
+              {isActive || window.innerWidth < 768 ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="relative z-10 p-10 text-white h-full flex flex-col justify-between"
+                >
+                  <div>
+                    <h3 className="text-4xl font-semibold mb-4 flex items-center justify-between">
+                      <span className="flex items-center gap-2">
+                        <span className="text-orange-500 text-5xl">
+                          {service.title[0]}
+                        </span>
+                        {service.title.slice(1)}
+                      </span>
+                      <img
+                        src={service.iconImg}
+                        alt={`${service.title} icon`}
+                        className="object-contain filter invert w-14 h-14"
+                      />
+                    </h3>
+                    <p className="text-lg mt-2">{service.desc}</p>
+                  </div>
+                  <div>
+                    <Link href={service.link}>
+                      <button className="mt-4 bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition">
+                        SEE MORE →
+                      </button>
+                    </Link>
+                  </div>
+                </motion.div>
+              ) : (
+                <div className="relative z-10 flex flex-col items-center justify-between h-full py-6 text-white text-lg font-semibold">
+                  <img
+                    src={service.iconImg}
+                    alt={`${service.title} icon`}
+                    className="w-10 h-10 object-contain filter invert"
+                  />
+                  <div className="flex-1 flex items-center justify-center">
+                    <div className="transform -rotate-90 whitespace-nowrap text-center">
+                      <span className="text-orange-500 text-4xl">
                         {service.title[0]}
                       </span>
                       {service.title.slice(1)}
-                    </span>
-                    <img
-                      src={service.iconImg}
-                      alt={`${service.title} icon`}
-                      className={`object-contain filter invert transition-all duration-300 ${
-                        index === activeIndex ? "w-16 h-16" : "w-10 h-10"
-                      }`}
-                    />
-                  </h3>
-                  <p className="text-lg mt-2">{service.desc}</p>
-                </div>
-                <div>
-                  <Link href={service.link}>
-                    <button className="mt-4 bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition">
-                      SEE MORE →
-                    </button>
-                  </Link>
-                </div>
-              </motion.div>
-            ) : (
-              <div className="relative z-10 flex flex-col items-center justify-between h-full py-6 text-white text-lg font-semibold">
-                <img
-                  src={service.iconImg}
-                  alt={`${service.title} icon`}
-                  className="w-10 h-10 object-contain filter invert"
-                />
-                <div className="flex-1 flex items-center justify-center">
-                  <div className="transform -rotate-90 whitespace-nowrap text-center">
-                    <span className="text-orange-500 text-4xl">
-                      {service.title[0]}
-                    </span>
-                    {service.title.slice(1)}
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
-          </div>
-        ))}
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

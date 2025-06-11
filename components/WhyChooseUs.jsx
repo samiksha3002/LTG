@@ -4,23 +4,23 @@ import Image from "next/image";
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative bg-[#f8eae1] py-28 px-6 overflow-hidden">
-      {/* Left geometric background pattern with slow zoom animation */}
+    <section className="relative bg-[#f8eae1] py-20 md:py-28 px-6 overflow-hidden">
+      {/* Background Pattern - vertically centered and top-aligned */}
       <div
-        className="absolute left-0 top-0 bottom-0 w-1/2 bg-left bg-no-repeat bg-cover mix-blend-multiply opacity-20 pointer-events-none animate-slow-zoom"
+        className="absolute inset-0 md:inset-y-0 md:left-0 w-full md:w-1/2 bg-no-repeat bg-contain md:bg-cover bg-center md:bg-left-top mix-blend-multiply opacity-20 pointer-events-none animate-slow-zoom"
         style={{ backgroundImage: "url('/Bg-img.png')" }}
       />
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center relative z-10">
         {/* Left Side with logo */}
-        <div className="relative flex justify-center items-center px-6 md:px-12 py-12 min-h-[400px]">
+        <div className="relative flex justify-center items-center px-6 md:px-12 py-8 md:py-12 h-64 md:min-h-[400px] z-10">
           <div className="relative z-10 animate-float">
             <Image
               src="/logo.png"
               alt="LTG Logo"
-              width={250}
-              height={250}
-              className="object-contain transition-transform duration-500 ease-in-out hover:scale-105"
+              width={140}
+              height={140}
+              className="object-contain transition-transform duration-500 ease-in-out hover:scale-105 md:w-[250px] md:h-[250px]"
             />
           </div>
         </div>
@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
         {/* Right Content */}
         <div className="px-6 md:px-12 z-10 animate-fade-in-up delay-200">
           <p className="text-[#d45023] font-medium mb-2">— Why Us</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-black">
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 text-black">
             Why Choose Us?
           </h2>
           <p className="text-black text-base leading-relaxed mb-6">
