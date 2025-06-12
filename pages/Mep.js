@@ -32,14 +32,18 @@ export default function LED() {
       />
       <WhyChooseLumitec
         top={{
-          title: "✅ Why Choose Us?",
-          text: "lighting works best when everything else is built to support it. At LTG, we align mechanical, electrical, and plumbing systems perfectly with your lighting needs — ensuring seamless functionality, energy efficiency, and future-ready performance across residential, commercial, and hospitality spaces.",
+          title: "Technical Mastery in MEP Engineering",
+          text: "Our MEP (Mechanical, Electrical & Plumbing) services are designed to optimize performance, ensure safety, and reduce long-term operating costs. We leverage the latest engineering tools, smart systems, and proven standards to deliver MEP solutions that are both technically sound and future-ready. Whether it's HVAC efficiency, precise electrical load balancing, or reliable plumbing layouts — we engineer with clarity and confidence.",
+          tagline:
+            "Every wire, pipe, and duct is planned to perform — designed for durability, safety, and energy efficiency.",
           image: "/img1.jpg",
           reverse: false,
         }}
         bottom={{
-          title: "🛠 Our Commitment to Quality",
-          text: "We don’t just plug and play — we plan and perfect. Our MEP services are executed with accuracy, certified materials, and skilled workmanship. Every connection, cable, and conduit is tested, secured, and designed to complement your lighting vision without compromise.",
+          title: "Integrated MEP Planning with Architectural Vision",
+          text: "MEP design is more than just infrastructure — it’s the lifeblood of any functional space. We collaborate closely with architects, consultants, and developers to ensure our systems are seamlessly woven into the structure’s form and function. From early-stage schematics to final commissioning, our team ensures the MEP elements support and enhance the architectural experience — never conflict with it.",
+          tagline:
+            "We believe great engineering is invisible — present in performance, yet harmonious with the design.",
           image: "/img1.jpg",
           reverse: true,
         }}

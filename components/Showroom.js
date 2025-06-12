@@ -63,9 +63,10 @@ export default function Showroom() {
       </div>
 
       {/* Back to Top Button */}
+      {/* Back to Top Button - only visible on md and up */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white text-black px-3 py-5 rounded-md shadow-md rotate-180"
+        className="hidden md:flex fixed right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white text-black px-3 py-5 rounded-md shadow-md rotate-180"
         style={{ animation: "fadeInUp 2s ease-out forwards" }}
       >
         <div className="flex flex-col items-center text-xs font-medium">

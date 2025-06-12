@@ -32,14 +32,18 @@ export default function LED() {
       />
       <WhyChooseLumitec
         top={{
-          title: "✅ Why Choose Us?",
-          text: "Because we understand the power of a perfectly finished space. Our team handles the complete interior construction process under one roof, ensuring seamless coordination between design, lighting, and electrical work. We deliver projects on time, on budget, and to the highest standard — with zero compromises on creativity or quality.",
+          title: "Precision-Driven Interior Execution",
+          text: "From blank shells to turnkey interiors, our fit-out services deliver refined spaces that reflect both purpose and personality. We manage the complete execution — including civil, flooring, ceiling, partitions, and finishing — with precision, ensuring every layer of the build aligns with design intent and structural integrity. Our team turns blueprints into immersive experiences.",
+          tagline:
+            "Every square foot crafted with care — quality that speaks without saying a word.",
           image: "/img1.jpg",
           reverse: false,
         }}
         bottom={{
-          title: "🛠 Our Commitment to Quality",
-          text: "Every fit-out project is backed by expert craftsmanship, premium materials, and attention to the smallest detail. From structural works to final finishes, we maintain a rigorous standard of safety, durability, and aesthetic excellence. With LTG, your space doesn’t just get done — it gets done right, with quality that stands the test of time.",
+          title: "Design-Integrated Project Delivery",
+          text: "We work hand-in-hand with architects, designers, and consultants to bring a cohesive vision to life. Through collaborative planning, 3D coordination, and seamless on-site execution, we bridge concept and reality. The result? Spaces that are beautiful, functional, and delivered on time — with zero compromise on detail.",
+          tagline:
+            "Our commitment is not just to build — but to elevate the design at every stage.",
           image: "/img1.jpg",
           reverse: true,
         }}

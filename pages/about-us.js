@@ -11,14 +11,15 @@ export default function AboutUs() {
   return (
     <>
       <Header />
-      <AboutUsHero
-        imageSrc="/img1.jpg"
-        title="About Us"
-        breadcrumb={[
-          { label: "Home", href: "/" },
-          { label: "About", href: null },
-        ]}
-      />
+      <section className="mt-[100px]">
+        {" "}
+        {/* adjust based on header height */}
+        <AboutUsHero
+          imageSrc="/img1.jpg"
+          title="About Us"
+          breadcrumb={[{ label: "Home", href: "/" }, { label: "About Us" }]}
+        />
+      </section>
 
       <AboutSection />
       <AboutService />

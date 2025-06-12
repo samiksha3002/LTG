@@ -163,9 +163,9 @@ export default function Header() {
                   </Link>
                   <button
                     onClick={() => setShowServicesSubmenu(true)}
-                    className="underline underline-offset-4"
+                    className="flex items-center gap-2 text-base font-medium"
                   >
-                    OUR SERVICES
+                    OUR SERVICES <ChevronDown size={16} />
                   </button>
                   <Link
                     href="/gallery"

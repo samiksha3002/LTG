@@ -44,7 +44,7 @@ export default function Hero() {
           home, farmhouse, office, hotel, or garden. At LTG, we blend innovation
           with style to brighten every space uniquely.
         </p>
-        import Link from "next/link"; // Inside your component JSX:
+
         <Link href="/about-us">
           <button className="mt-8 bg-black text-white px-6 py-3 rounded-md font-medium hover:bg-gray-800 flex items-center gap-2 mx-auto">
             About Us <span>›</span>

@@ -32,18 +32,22 @@ export default function LED() {
       />
       <WhyChooseLumitec
         top={{
-          title: "✅ Why Choose Us?",
-          text: "Because we don’t just do wiring — we build trust. At LTG, our electrical work is powered by experience, driven by innovation, and backed by full compliance with industry standards. We take the time to understand your needs and deliver tailored solutions that are future-ready. No shortcuts, no compromises — just clean, reliable, and high-performance results.",
+          title: "Reliable Power Infrastructure",
+          text: "We specialize in end-to-end electrical solutions — from basic wiring to complex power distribution systems. Safety, precision, and compliance form the backbone of every project. Whether residential, commercial, or industrial, our certified team ensures every circuit is carefully planned and executed to meet the highest standards.",
+          tagline:
+            "Powering your project with reliability and zero-compromise safety.",
           image: "/img1.jpg",
           reverse: false,
         }}
         bottom={{
-          title: "🛠 Our Commitment to Quality",
-          text: "Every wire, socket, and switch we install is a reflection of our commitment to excellence. Our team uses top-grade materials and follows precise installation practices to ensure your system is not only functional but also future-proof. We test everything thoroughly and work with full transparency — because for us, quality means peace of mind that lasts for years.",
+          title: "Systematic Design & Execution",
+          text: "We believe electrical works are not just technical — they are architectural veins of a building. Our planning emphasizes accessibility, load management, and longevity. Working closely with the design team, we ensure all systems — lighting, automation, HVAC — run seamlessly and sustainably.",
+          tagline: "Designed for today. Ready for tomorrow.",
           image: "/img1.jpg",
           reverse: true,
         }}
       />
+
       <FeaturesGrid />
       <Footer />
     </>

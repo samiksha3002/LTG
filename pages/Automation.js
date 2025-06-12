@@ -33,14 +33,17 @@ export default function LED() {
 
       <WhyChooseLumitec
         top={{
-          title: "✅ Why Choose Us?",
-          text: "At LTG, we understand that automation is not just about gadgets — it’s about simplifying life. Our team listens closely to your routine, preferences, and goals to design systems that work quietly in the background but powerfully impact your comfort. We integrate reliable, cutting-edge technology with elegant design — giving you control at your fingertips, whether you're home or away.",
+          title: "Smart Living, Effortlessly Delivered",
+          text: "Welcome to a world where lighting, climate, security, and entertainment respond to your touch — or even your presence. Our home automation solutions are designed to provide comfort, control, and convenience, tailored to your lifestyle. Whether it's voice-activated scenes or app-based control, we make technology feel simple, intuitive, and luxurious.Your home. ",
+          tagline: "Smart living, effortlessly delivered.",
           image: "/img1.jpg",
           reverse: false,
         }}
         bottom={{
-          title: "🛠 Our Commitment to Quality",
-          text: "Quality in home automation starts with understanding — and ends with flawless execution. We use certified, high-performance products and follow best-in-class installation practices to ensure lasting performance. Every system is tested, secured, and fine-tuned for your lifestyle. With LTG, you get more than just automation — you get peace of mind, built to last.",
+          title: "Seamless Technology Integration",
+          text: "We design systems that work invisibly in the background — integrated within your home’s architecture without disrupting aesthetics. From retrofit solutions to new installations, our automation setup is scalable, discreet, and future-proof. Every feature is engineered to blend into your daily life, not interrupt it.",
+          tagline:
+            "Technology that disappears into design — but appears when you need it",
           image: "/img1.jpg",
           reverse: true,
         }}
