@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
-
 import {
   FaFacebookF,
   FaInstagram,
@@ -47,24 +46,24 @@ export default function Footer() {
           </h3>
           <ul className="space-y-2">
             <li>
-              <a href="/" className="hover:text-orange-500">
+              <Link href="/" className="hover:text-orange-500">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="about-us" className="hover:text-orange-500">
+              <Link href="/about-us" className="hover:text-orange-500">
                 About us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="LED" className="hover:text-orange-500">
+              <Link href="/LED" className="hover:text-orange-500">
                 Our Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="contact-us" className="hover:text-orange-500">
+              <Link href="/contact-us" className="hover:text-orange-500">
                 Contact Us
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -74,7 +73,6 @@ export default function Footer() {
           <h3 className="text-orange-500 font-semibold text-lg mb-4">
             Services
           </h3>
-
           <ul className="space-y-2 text-gray-700">
             <li>
               <Link href="/LED" className="hover:text-black transition">
@@ -98,7 +96,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="/constructions"
+                href="/Constructions"
                 className="hover:text-black transition"
               >
                 Fit Out Constructions
@@ -138,10 +136,34 @@ export default function Footer() {
           Copyright © 2025 Lumitec Global
         </p>
         <div className="flex justify-center md:justify-end gap-4 mt-4 md:mt-0 w-full md:w-auto text-xl">
-          <FaFacebookF className="cursor-pointer hover:text-orange-500" />
-          <FaInstagram className="cursor-pointer hover:text-orange-500" />
-          <FaTwitter className="cursor-pointer hover:text-orange-500" />
-          <FaRegCommentDots className="cursor-pointer hover:text-orange-500" />
+          <a
+            href="https://facebook.com/yourpage"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebookF className="cursor-pointer hover:text-orange-500" />
+          </a>
+          <a
+            href="https://www.instagram.com/lumitec_global?utm_source=qr&igsh=MWt0c2dlMmMweTV2dQ=="
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram className="cursor-pointer hover:text-orange-500" />
+          </a>
+          <a
+            href="https://twitter.com/yourhandle"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaTwitter className="cursor-pointer hover:text-orange-500" />
+          </a>
+          <a
+            href="mailto:info@lumi-tec.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaRegCommentDots className="cursor-pointer hover:text-orange-500" />
+          </a>
         </div>
       </div>
     </footer>
