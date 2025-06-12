@@ -9,14 +9,19 @@ export default function LED() {
   return (
     <>
       <Header />
-      <AboutUsHero
-        imageSrc="/img1.jpg"
-        title="LED Lighting"
-        breadcrumb={[
-          { label: "Home", href: "Gallery" },
-          { label: "", href: null },
-        ]}
-      />
+      <section className="mt-[100px]">
+        {" "}
+        {/* adjust based on header height */}
+        <AboutUsHero
+          imageSrc="/img1.jpg"
+          title="Fit Out Constructions"
+          breadcrumb={[
+            { label: "Home", href: "/" },
+            { label: "Our Services /Fit Out Constructions" },
+          ]}
+        />
+      </section>
+
       <AboutLedLighting
         title="Electrical Living with Home Automation"
         paragraphs={[

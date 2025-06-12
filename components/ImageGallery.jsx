@@ -14,14 +14,7 @@ const albums = {
     "/G10.jpg",
   ],
   Residential: ["/G6.jpg", "/G7.jpg", "/G8.jpg", "/G9.jpg", "/G10.jpg"],
-  "Album name 3": [
-    "/G2.jpg",
-    "/G3.jpg",
-    "/G4.jpg",
-    "/G5.jpg",
-    "/G6.jpg",
-  "/G7.jpg",
-  ],
+  Exterior: ["/G2.jpg", "/G3.jpg", "/G4.jpg", "/G5.jpg", "/G6.jpg", "/G7.jpg"],
 };
 
 export default function ImageGallery() {

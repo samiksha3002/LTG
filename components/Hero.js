@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -43,9 +44,12 @@ export default function Hero() {
           home, farmhouse, office, hotel, or garden. At LTG, we blend innovation
           with style to brighten every space uniquely.
         </p>
-        <button className="mt-8 bg-black text-white px-6 py-3 rounded-md font-medium hover:bg-gray-800 flex items-center gap-2 mx-auto">
-          Our Services <span>›</span>
-        </button>
+        import Link from "next/link"; // Inside your component JSX:
+        <Link href="/about-us">
+          <button className="mt-8 bg-black text-white px-6 py-3 rounded-md font-medium hover:bg-gray-800 flex items-center gap-2 mx-auto">
+            About Us <span>›</span>
+          </button>
+        </Link>
       </div>
 
       {/* Navigation Arrows */}

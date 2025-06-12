@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function CallToActionSection() {
   return (
@@ -10,12 +11,15 @@ export default function CallToActionSection() {
       <p className="max-w-3xl mx-auto text-lg text-black mb-8">
         Have a question or a custom project in mind? We’d love to hear from you.
         Reach out to our team of lighting experts — and let’s create something
-        brilliant, together.
+        brilliant, together.
       </p>
 
-      <button className="inline-flex items-center px-6 py-3 bg-[#f1481f] text-white font-semibold rounded shadow hover:bg-[#d93f1b] transition">
+      <Link
+        href="/contact-us"
+        className="inline-flex items-center px-6 py-3 bg-[#f1481f] text-white font-semibold rounded shadow hover:bg-[#d93f1b] transition"
+      >
         Contact Us Today <ArrowRight className="ml-2 w-5 h-5" />
-      </button>
+      </Link>
     </section>
   );
 }

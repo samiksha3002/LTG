@@ -28,7 +28,7 @@ const services = [
   },
   {
     title: "Mep Services",
-    desc: "Efficiency built in – we integrate mechanical, electrical, and plumbing systems for flawless functionality.",
+    desc: "From seamless electrical layouts to efficient mechanical and plumbing systems, our MEP solutions ensure safe, reliable, and future-ready infrastructure for every smart space.",
     image: "/img1.jpg",
     iconImg: "/ser4.png",
     link: "/Mep",

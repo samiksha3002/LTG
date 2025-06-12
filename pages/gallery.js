@@ -7,14 +7,16 @@ export default function AboutUs() {
   return (
     <>
       <Header />
-      <AboutUsHero
-        imageSrc="/img1.jpg"
-        title="Gallery"
-        breadcrumb={[
-          { label: "Home", href: "Gallery" },
-          { label: "Gallery", href: null },
-        ]}
-      />
+      <section className="mt-[100px]">
+        {" "}
+        {/* adjust based on header height */}
+        <AboutUsHero
+          imageSrc="/img1.jpg"
+          title="Gallery"
+          breadcrumb={[{ label: "Home", href: "/" }, { label: "Gallery" }]}
+        />
+      </section>
+
       <ImageGallery />
       <Footer />
     </>

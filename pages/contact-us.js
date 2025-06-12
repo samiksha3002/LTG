@@ -9,14 +9,15 @@ export default function ContactUs() {
   return (
     <>
       <Header />
-      <AboutUsHero
-        imageSrc="/img1.jpg"
-        title="Contact Us"
-        breadcrumb={[
-          { label: "Home", href: "/" },
-          { label: "Contact", href: null },
-        ]}
-      />
+      <section className="mt-[100px]">
+        {" "}
+        {/* adjust based on header height */}
+        <AboutUsHero
+          imageSrc="/img1.jpg"
+          title="Contact Us"
+          breadcrumb={[{ label: "Home", href: "/" }, { label: "Contact us" }]}
+        />
+      </section>
       <ContactCards />
       <ContactFormSection />
       <GoogleMapSection />

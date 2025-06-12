@@ -18,7 +18,7 @@ export default function AboutLedLighting({
   return (
     <div
       id="about-led-lighting"
-      className="bg-white px-6 md:px-16 py-10 pt-32 md:pt-36 scroll-mt-36"
+      className="bg-white px-6 md:px-16 py-10  scroll-mt-36"
     >
       <h2
         className="text-black text-3xl md:text-4xl font-bold mb-4"
@@ -40,7 +40,7 @@ export default function AboutLedLighting({
 
       {imageSrc && (
         <div
-          className="relative overflow-hidden shadow-lg mt-6 h-[600px] w-full rounded-md"
+          className="relative overflow-hidden shadow-lg mt-6 h-[400px] w-full "
           data-aos="zoom-in"
           data-aos-delay="300"
         >
