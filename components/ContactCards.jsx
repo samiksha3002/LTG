@@ -44,32 +44,47 @@ export default function ContactCards() {
   }, []);
 
   return (
-    <section className="bg-[#fcfcfc] py-20 px-4 md:px-8">
+    <section
+      className="bg-[#fcfcfc] py-20 px-4 md:px-8"
+      aria-labelledby="contact-info-heading"
+    >
+      <h2 id="contact-info-heading" className="sr-only">
+        Contact Information
+      </h2>
+
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {contactData.map((item, index) => (
-          <div
+          <article
             key={index}
+            role="region"
+            aria-labelledby={`card-${index}`}
             data-aos="fade-up"
             data-aos-delay={index * 150}
             className="relative text-center bg-white border border-gray-100 shadow-xl rounded-2xl px-6 py-12 transition-transform hover:-translate-y-1.5 hover:shadow-2xl duration-300"
           >
             {/* Icon Container */}
             <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
-              <div className="bg-gradient-to-tr from-black to-gray-800 p-4 rounded-full shadow-lg">
+              <div
+                className="bg-gradient-to-tr from-black to-gray-800 p-4 rounded-full shadow-lg"
+                aria-hidden="true"
+              >
                 {item.icon}
               </div>
             </div>
 
             {/* Card Content */}
             <div className="pt-8">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2 tracking-wide">
+              <h3
+                id={`card-${index}`}
+                className="text-lg font-semibold text-gray-900 mb-2 tracking-wide"
+              >
                 {item.title}
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
                 {item.value}
               </p>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>

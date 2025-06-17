@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const services = [
   {
-    title: "Led Lighting",
+    title: "LED Lighting",
     href: "/LED",
     description:
       "Brighten your world with energy-efficient LED — built to shine smarter, longer.",
@@ -40,7 +40,7 @@ const services = [
     image: "/G4.jpg",
   },
   {
-    title: "Fit Out Constructions",
+    title: "Fit-Out Constructions",
     href: "/Constructions",
     description:
       "Transforming interiors from plans to perfection — tailored fit-out solutions for every space.",
@@ -59,43 +59,51 @@ export default function AboutService() {
   }, []);
 
   return (
-    <div className="w-full bg-black py-20 overflow-hidden">
+    <section
+      className="w-full bg-black py-20 overflow-hidden"
+      aria-labelledby="services-heading"
+    >
       <div className="max-w-7xl mx-auto px-4">
         {/* Header Section */}
-        <div
+        <header
           className="grid md:grid-cols-2 gap-10 items-stretch"
           data-aos="fade-up"
         >
           <div className="bg-black text-white p-10 md:p-14 rounded-2xl shadow-2xl">
             <p className="text-sm text-orange-500 mb-2">— Our Services</p>
-            <h2 className="text-4xl md:text-5xl font-semibold mb-6 leading-snug">
+            <h2
+              id="services-heading"
+              className="text-4xl md:text-5xl font-semibold mb-6 leading-snug"
+            >
               Innovative Lighting Solutions, <br />
               Engineered for Impact and Elegance
             </h2>
           </div>
 
-          <div className="h-[300px] md:h-[420px] w-full">
+          <figure className="h-[300px] md:h-[420px] w-full">
             <Image
               src="/AboutS3.jpg"
-              alt="Main Service Background"
+              alt="Lighting installation design and planning"
               width={800}
               height={500}
               className="object-cover w-full h-full rounded-2xl"
+              priority
             />
-          </div>
-        </div>
+          </figure>
+        </header>
 
-        {/* First Row Cards */}
+        {/* Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-[-60px] z-30 relative">
           {services.slice(0, 3).map((service, index) => (
             <Link
               key={index}
               href={service.href}
-              className="block"
+              aria-label={`Explore ${service.title}`}
               data-aos="fade-up"
               data-aos-delay={index * 100}
+              className="block"
             >
-              <div
+              <article
                 className="relative rounded-2xl overflow-hidden shadow-xl flex flex-col px-4 cursor-pointer hover:scale-[1.02] transition-transform duration-300"
                 style={{
                   backgroundImage: `url(${service.image})`,
@@ -104,12 +112,12 @@ export default function AboutService() {
                   minHeight: "400px",
                 }}
               >
-                <div className="absolute inset-0 bg-white bg-opacity-20"></div>
+                <div className="absolute inset-0 bg-white bg-opacity-20" />
                 <div className="relative flex flex-col h-full text-black">
                   <div className="mb-3 mt-6">
                     <Image
                       src={service.icon}
-                      alt={service.title}
+                      alt={`${service.title} icon`}
                       width={70}
                       height={70}
                     />
@@ -119,12 +127,11 @@ export default function AboutService() {
                   </h3>
                   <p className="text-sm flex-grow">{service.description}</p>
                 </div>
-              </div>
+              </article>
             </Link>
           ))}
         </div>
 
-        {/* Second Row Cards */}
         <div
           className="flex justify-center mt-10 gap-6"
           data-aos="fade-up"
@@ -135,11 +142,12 @@ export default function AboutService() {
               <Link
                 key={index}
                 href={service.href}
-                className="block"
+                aria-label={`Learn more about ${service.title}`}
                 data-aos="zoom-in-up"
                 data-aos-delay={index * 150}
+                className="block"
               >
-                <div
+                <article
                   className="relative rounded-2xl overflow-hidden shadow-xl flex flex-col px-8 cursor-pointer hover:scale-[1.02] transition-transform duration-300"
                   style={{
                     backgroundImage: `url(${service.image})`,
@@ -148,12 +156,12 @@ export default function AboutService() {
                     minHeight: "400px",
                   }}
                 >
-                  <div className="absolute inset-0 bg-white bg-opacity-20"></div>
+                  <div className="absolute inset-0 bg-white bg-opacity-20" />
                   <div className="relative flex flex-col h-full text-black">
                     <div className="mb-3 mt-6">
                       <Image
                         src={service.icon}
-                        alt={service.title}
+                        alt={`${service.title} icon`}
                         width={70}
                         height={70}
                       />
@@ -163,12 +171,12 @@ export default function AboutService() {
                     </h3>
                     <p className="text-sm flex-grow">{service.description}</p>
                   </div>
-                </div>
+                </article>
               </Link>
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

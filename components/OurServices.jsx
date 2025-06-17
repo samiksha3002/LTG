@@ -8,7 +8,8 @@ const services = [
   {
     title: "Led Lighting",
     desc: "Illuminate your environment with advanced LED lighting solutions. Designed for energy efficiency and visual appeal, our lighting setups are perfect for modern homes and smart spaces.",
-    image: "/img1.jpg",
+    image:
+      "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182384/Commercial117_tnlrzg.jpg",
     iconImg: "/Ser2.png",
     link: "/LED",
   },
@@ -28,7 +29,7 @@ const services = [
   },
   {
     title: "Mep Services",
-    desc: "From seamless electrical layouts to efficient mechanical and plumbing systems, our MEP solutions ensure safe, reliable, and future-ready infrastructure for every smart space.",
+    desc: "From seamless electrical layouts to efficient mechanical and plumbing systems, our MEP solutions ensure safe, reliable, and future-ready infrastructure for every smart space.",
     image: "/img1.jpg",
     iconImg: "/ser4.png",
     link: "/Mep",

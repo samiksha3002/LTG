@@ -16,20 +16,16 @@ export default function MarqueeSection() {
   return (
     <div className="bg-[#f9f3ef] overflow-hidden py-6">
       <div className="relative w-full">
-        <div className="flex gap-6 animate-marquee whitespace-nowrap">
+        <div className="flex gap-12 animate-marquee whitespace-nowrap">
           {[...services, ...services].map((text, i) => (
-            <div key={i} className="flex items-center gap-3 min-w-max px-4">
+            <div key={i} className="flex items-center gap-4 min-w-max px-4">
               <span
-                className={`${
-                  i % 2 === 0
-                    ? "text-black font-extrabold text-5xl"
-                    : "text-black text-5xl font-outline-1"
-                }`}
+                className={`text-black font-semibold text-2xl md:text-4xl whitespace-nowrap`}
               >
                 {text}
               </span>
               <Image
-                src="/Customer1.png" // Replace with your image path
+                src="/Customer1.png"
                 alt="service icon"
                 width={36}
                 height={36}
@@ -39,6 +35,22 @@ export default function MarqueeSection() {
           ))}
         </div>
       </div>
+
+      {/* Animation Styles */}
+      <style jsx>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
+        }
+      `}</style>
     </div>
   );
 }

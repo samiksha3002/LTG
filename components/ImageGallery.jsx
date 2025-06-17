@@ -1,20 +1,83 @@
-import React, { useState, useEffect } from "react";
+"use client";
+
+import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const albums = {
   Commercial: [
-    "/G1.jpg",
-    "/G2.jpg",
-    "/G3.jpg",
-    "/G4.jpg",
-    "/G5.jpg",
-    "/G6.jpg",
-    "/G7.jpg",
-    "/G8.jpg",
-    "/G9.jpg",
-    "/G10.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183754/Commercial6_boas4c.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183754/Commercial6_boas4c.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183131/Commercial22_xzuney.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183115/Commercial21_lz380z.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182805/Interior76_n8rpxn.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182805/Interior76_n8rpxn.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183764/Commercial1_jtdoh8.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182688/Commercial48_vntpzu.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182554/Commercial50_r0pomi.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182553/Commercial51_zg8guj.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182397/Commercial106_dwekki.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182397/Commercial106_dwekki.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182393/Comercial58_xmnaur.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182390/Comercial59_vxadxm.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182390/Comercial59_vxadxm.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182390/Comercial59_vxadxm.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182380/Commercial112_mpffxl.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182379/Comercial62_j6ejre.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182377/Comercial63_rfvd3i.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182374/Commercial105_szipas.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182374/Commercial121_aqf5ed.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182371/Commercial118_hkkecn.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183800/Commercial8_k06cyx.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183791/Commercial9_ynxc1d.jpg",
   ],
-  Residential: ["/G6.jpg", "/G7.jpg", "/G8.jpg", "/G9.jpg", "/G10.jpg"],
-  Exterior: ["/G2.jpg", "/G3.jpg", "/G4.jpg", "/G5.jpg", "/G6.jpg", "/G7.jpg"],
+  Residential: [
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183970/Pank3_jasd5b.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183900/Interior65_pyck8i.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183880/Interior71_ig0lay.jpg",
+    "/https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183864/Interior81_p67juw.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183832/Interior77_dpjvyu.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183755/Pank9_dlkszv.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183729/Pank4_cb3s7e.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183720/Pank10_gtzzsm.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183710/Pank13_wohvhk.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183696/Pank12_drqomo.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183665/Pank15_srba0r.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183233/Interior2_x4y8ya.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183630/Light2_qeq4ru.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183219/Interior1_axgzlh.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183218/Interior3_lrfzif.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183201/Interior4_gtfa67.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183020/Interior59_hw5vtj.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183034/Interior55_gyf5k0.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183004/Interior56_trcqij.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183004/Interior56_trcqij.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182888/Interior61_ebhlxl.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182411/Interior104_ygv1g6.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182405/Interior103_gwziho.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182275/Interior101_tjitnu.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182270/Interior100_gtmtl0.jpg",
+  ],
+  Exterior: [
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750184185/Exterior22_yirfyg.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750184167/Exterior28_y1hqfn.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183986/exterior31_inx4mc.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183969/exterior24_hydtgl.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183724/Exterior2_qqzoh8.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183710/Pank13_wohvhk.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183633/Exterior4_svigxx.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183624/Exterior5_cwwq6z.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183605/Exterior6_hyqoi9.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183605/Exterior6_hyqoi9.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183598/Exterior7_ek7wrs.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183584/Exterior9_pvz2uy.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183516/Exterior10_o9svte.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183516/Exterior10_o9svte.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183397/Exterior16_jmnbxj.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183395/Exterior17_d3o4u5.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183339/Exterior21_pgtlil.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183356/Exterior20_cjcgbl.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183322/Exterior23_keqzfo.jpg",
+  ],
 };
 
 export default function ImageGallery() {
@@ -22,15 +85,15 @@ export default function ImageGallery() {
   const [fade, setFade] = useState(true);
 
   useEffect(() => {
-    setFade(false); // start fade out
-    const timeout = setTimeout(() => setFade(true), 200); // fade in after 200ms
+    setFade(false);
+    const timeout = setTimeout(() => setFade(true), 200);
     return () => clearTimeout(timeout);
   }, [selectedAlbum]);
 
   return (
-    <section className="bg-[#fcfcfc] py-12 px-0">
+    <section className="bg-[#fcfcfc] py-12 px-4 sm:px-6 lg:px-12">
       {/* Album Tabs */}
-      <div className="flex justify-center gap-4 mb-10 px-4">
+      <div className="flex justify-center gap-4 mb-10 flex-wrap">
         {Object.keys(albums).map((album) => (
           <button
             key={album}
@@ -48,17 +111,23 @@ export default function ImageGallery() {
 
       {/* Image Grid */}
       <div
-        className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 px-8 transition-opacity duration-500 ${
-          fade ? "opacity-100" : "opacity-0"
+        className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 transition-opacity duration-500 ${
+          fade ? "opacity-100 scale-100" : "opacity-0 scale-95"
         }`}
       >
         {albums[selectedAlbum].map((src, index) => (
-          <img
+          <div
             key={index}
-            src={src}
-            alt={`img-${index}`}
-            className="object-cover w-full h-60 shadow-md"
-          />
+            className="relative w-full h-48 sm:h-60 md:h-72 overflow-hidden rounded-md shadow-md"
+          >
+            <Image
+              src={src}
+              alt={`${selectedAlbum} image ${index + 1}`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 20vw"
+            />
+          </div>
         ))}
       </div>
     </section>

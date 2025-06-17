@@ -34,23 +34,28 @@ export default function TeamSection() {
   }, []);
 
   return (
-    <section className="relative w-full py-24 px-6 overflow-hidden bg-white">
-      {/* Left background pattern image */}
+    <section
+      className="relative w-full py-24 px-6 overflow-hidden bg-white"
+      aria-label="Meet our team"
+    >
+      {/* Decorative Background */}
       <div
         className="absolute left-0 top-0 bottom-0 w-1/2 bg-left bg-no-repeat bg-cover mix-blend-multiply opacity-10 pointer-events-none"
         style={{ backgroundImage: "url('/Bg-img.png')" }}
       />
 
-      {/* Optional bottom-right decorative image */}
       <Image
         src="/Test.png"
-        alt="Decorative"
+        alt=""
         width={130}
         height={130}
         className="absolute bottom-4 right-4 opacity-30 pointer-events-none z-0"
+        aria-hidden="true"
       />
 
+      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto">
+        {/* Heading */}
         <div
           className="text-center mb-16"
           data-aos="fade-up"
@@ -65,21 +70,23 @@ export default function TeamSection() {
           </p>
         </div>
 
+        {/* Team Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
           {teamMembers.map((member, index) => (
             <div
-              key={index}
+              key={member.name + index}
               data-aos="zoom-in-up"
               data-aos-delay={index * 200 + 200}
-              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 p-6 text-center transform hover:scale-[1.03]"
+              className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-500 p-6 text-center hover:scale-[1.03] transform"
             >
               <div className="mb-4 flex justify-center">
                 <Image
                   src={member.image}
-                  alt={member.name}
+                  alt={`${member.name} - ${member.role}`}
                   width={96}
                   height={96}
                   className="rounded-full object-cover w-24 h-24"
+                  loading="lazy"
                 />
               </div>
               <h3 className="text-lg font-semibold text-black">

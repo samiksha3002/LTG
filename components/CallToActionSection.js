@@ -3,8 +3,14 @@ import Link from "next/link";
 
 export default function CallToActionSection() {
   return (
-    <section className="bg-[#f5f5f5] py-20 text-center px-4">
-      <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+    <section
+      className="bg-[#f5f5f5] py-20 text-center px-4"
+      aria-labelledby="cta-heading"
+    >
+      <h2
+        id="cta-heading"
+        className="text-4xl md:text-5xl font-bold text-black mb-6"
+      >
         Let’s Brighten the Future Together
       </h2>
 
@@ -16,7 +22,8 @@ export default function CallToActionSection() {
 
       <Link
         href="/contact-us"
-        className="inline-flex items-center px-6 py-3 bg-[#f1481f] text-white font-semibold rounded shadow hover:bg-[#d93f1b] transition"
+        className="inline-flex items-center px-6 py-3 bg-[#f1481f] text-white font-semibold rounded shadow hover:bg-[#d93f1b] transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#f1481f]"
+        aria-label="Contact us today to discuss your lighting project"
       >
         Contact Us Today <ArrowRight className="ml-2 w-5 h-5" />
       </Link>

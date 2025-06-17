@@ -34,8 +34,12 @@ export default function ComfortSection() {
   }, []);
 
   return (
-    <section className="bg-[#f7f7f5] py-16 text-center">
+    <section
+      className="bg-[#f7f7f5] py-16 text-center"
+      aria-labelledby="comfort-heading"
+    >
       <h2
+        id="comfort-heading"
         className="text-4xl md:text-5xl font-extrabold text-black mb-12"
         data-aos="fade-up"
       >
@@ -48,16 +52,19 @@ export default function ComfortSection() {
             key={index}
             className="flex flex-col items-center"
             data-aos="fade-up"
-            data-aos-delay={index * 100} // subtle staggered effect
+            data-aos-delay={index * 100}
           >
             <Image
               src={feature.icon}
-              alt={feature.title}
+              alt={`Icon representing ${feature.title}`}
               width={125}
               height={125}
               className="mb-4"
             />
-            <p className="text-base text-black font-medium leading-tight">
+            <p
+              className="text-base text-black font-medium leading-tight"
+              aria-label={feature.title}
+            >
               {feature.title.split(" ").map((word, i) => (
                 <span key={i} className="block">
                   {word}

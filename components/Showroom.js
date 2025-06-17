@@ -1,55 +1,50 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowUp } from "lucide-react";
 
 export default function Showroom() {
   return (
     <div className="bg-black text-white relative font-sans overflow-hidden">
-      {/* Left geometric background with slow zoom */}
+      {/* Geometric Background with Slow Zoom */}
       <div
-        className="absolute left-0 top-0 bottom-0 w-1/2 bg-left bg-no-repeat bg-cover mix-blend-multiply opacity-10 pointer-events-none"
+        className="absolute left-0 top-0 bottom-0 w-1/2 bg-left bg-no-repeat bg-cover mix-blend-multiply opacity-10 pointer-events-none animate-slowZoom"
         style={{
           backgroundImage: "url('/Bg-img.png')",
-          animation: "slowZoom 20s ease-in-out infinite",
         }}
       />
 
+      {/* Content */}
       <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10">
-        {/* Left Side - Foreground Images */}
-        <div
-          className="relative z-10 flex gap-4 w-full"
-          style={{ animation: "fadeInUp 1s ease-out forwards" }}
-        >
+        {/* Left - Images */}
+        <div className="relative z-10 flex gap-4 w-full opacity-0 animate-fadeInUp">
           {/* Short Image */}
-          <div
-            className="w-1/2 h-[250px] overflow-hidden mt-8"
-            style={{ animation: "float 6s ease-in-out infinite" }}
-          >
+          <div className="w-1/2 h-[250px] overflow-hidden mt-8 animate-float">
             <Image
               src="/img1.jpg"
-              alt="Smart device"
+              alt="Smart home interface"
               width={500}
               height={250}
               className="object-cover w-full h-full rounded-lg"
+              priority
             />
           </div>
 
           {/* Tall Image */}
-          <div
-            className="w-1/2 h-[400px] overflow-hidden"
-            style={{ animation: "float 6s ease-in-out infinite" }}
-          >
+          <div className="w-1/2 h-[400px] overflow-hidden animate-float">
             <Image
               src="/img1.jpg"
-              alt="Technician working"
+              alt="Technician setting up smart lighting"
               width={500}
               height={400}
               className="object-cover w-full h-full rounded-lg"
+              priority
             />
           </div>
         </div>
 
-        {/* Right Side - Text Info */}
-        <div style={{ animation: "fadeInUp 1.5s ease-out forwards" }}>
+        {/* Right - Text */}
+        <div className="opacity-0 animate-fadeInUp delay-200">
           <h2 className="text-4xl font-bold mb-6">Our Showroom</h2>
           <p className="mb-6 text-gray-300">
             Step into a space where technology meets design. Our showroom
@@ -63,11 +58,10 @@ export default function Showroom() {
       </div>
 
       {/* Back to Top Button */}
-      {/* Back to Top Button - only visible on md and up */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="hidden md:flex fixed right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white text-black px-3 py-5 rounded-md shadow-md rotate-180"
-        style={{ animation: "fadeInUp 2s ease-out forwards" }}
+        className="hidden md:flex fixed right-4 top-1/2 -translate-y-1/2 z-20 bg-white text-black px-3 py-5 rounded-md shadow-md rotate-180 opacity-0 animate-fadeInUp delay-500"
+        aria-label="Back to top"
       >
         <div className="flex flex-col items-center text-xs font-medium">
           <ArrowUp className="mb-2 rotate-180" />
@@ -75,7 +69,7 @@ export default function Showroom() {
         </div>
       </button>
 
-      {/* Custom styles */}
+      {/* Custom Styles */}
       <style jsx>{`
         .writing-vertical {
           writing-mode: vertical-rl;
@@ -96,7 +90,7 @@ export default function Showroom() {
         @keyframes float {
           0%,
           100% {
-            transform: translateY(0px);
+            transform: translateY(0);
           }
           50% {
             transform: translateY(-10px);
@@ -111,6 +105,30 @@ export default function Showroom() {
           50% {
             transform: scale(1.1);
           }
+        }
+
+        .animate-fadeInUp {
+          animation: fadeInUp 1.2s ease-out forwards;
+        }
+
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-slowZoom {
+          animation: slowZoom 20s ease-in-out infinite;
+        }
+
+        .delay-200 {
+          animation-delay: 0.2s;
+        }
+
+        .delay-500 {
+          animation-delay: 0.5s;
+        }
+
+        .opacity-0 {
+          opacity: 0;
         }
       `}</style>
     </div>

@@ -13,7 +13,7 @@ const projects = [
 ];
 
 export default function ProjectsShowcase() {
-  const scrollRef = useRef(null);
+  const scrollRef = useRef(null); // ✅ Removed TypeScript annotation
 
   const scroll = (direction = "right") => {
     const container = scrollRef.current;
@@ -86,6 +86,7 @@ export default function ProjectsShowcase() {
         </button>
       </div>
 
+      {/* Local styles */}
       <style jsx>{`
         .no-scrollbar::-webkit-scrollbar {
           display: none;

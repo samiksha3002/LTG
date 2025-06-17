@@ -1,6 +1,7 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { ArrowUp } from "lucide-react";
 
 const testimonials = [
   {
@@ -31,7 +32,7 @@ export default function TestimonialsSection() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
@@ -39,8 +40,11 @@ export default function TestimonialsSection() {
   const { quote, author, role, avatar } = testimonials[currentIndex];
 
   return (
-    <section className="relative bg-[#f6e7e1] py-28 px-6 overflow-hidden fade-in">
-      {/* Left geometric background pattern */}
+    <section
+      className="relative bg-[#f6e7e1] py-28 px-6 overflow-hidden fade-in"
+      aria-label="Customer Testimonials"
+    >
+      {/* Background pattern */}
       <div
         className="absolute left-0 top-0 bottom-0 w-1/2 bg-left bg-no-repeat bg-cover mix-blend-multiply opacity-20 pointer-events-none"
         style={{ backgroundImage: "url('/Bg-img.png')" }}
@@ -54,71 +58,79 @@ export default function TestimonialsSection() {
         >
           <p className="text-orange-500 mb-2 text-lg">— Testimonials</p>
           <h2 className="text-black text-4xl lg:text-5xl font-bold leading-snug mb-6">
-            What our customers are
-            <br />
-            saying about us
+            What our customers are <br /> saying about us
           </h2>
-          <p className="text-base text-gray-700">
+          <p className="text-base text-gray-700 leading-relaxed">
             From cozy homes to luxurious hotels, our clients choose LTG not just
-            for lighting —<br />
-            but for the experience, the expertise, and the lasting impression
-            we leave behind.
+            for lighting —
+            <br className="hidden sm:block" />
+            but for the experience, expertise, and lasting impression we leave.
           </p>
         </div>
 
-        {/* Right Testimonial Card */}
+        {/* Testimonial Card */}
         <div
           className="w-full max-w-md bg-white p-8 shadow-lg rounded-md relative overflow-hidden min-h-[450px] fade-in"
           style={{ animationDelay: "0.5s" }}
         >
-          <div className="w-12 h-12 rounded-full bg-gray-300 mx-auto mb-4">
+          {/* Avatar */}
+          <div className="w-16 h-16 rounded-full mx-auto mb-4 overflow-hidden">
             <Image
               src={avatar}
-              alt={author}
-              width={48}
-              height={48}
+              alt={`${author} photo`}
+              width={64}
+              height={64}
               className="rounded-full object-cover"
             />
           </div>
 
-          <p className="text-gray-800 text-lg mb-2 text-center italic">
+          {/* Quote */}
+          <p className="text-gray-800 text-lg mb-6 text-center italic relative z-10">
             “{quote}”
-            <br />— {author}
           </p>
 
-          <div className="text-center">
-            <p className="font-semibold">{author}</p>
-            <p className="font-bold">{role}</p>
+          {/* Author */}
+          <div className="text-center mt-4 relative z-10">
+            <p className="font-semibold text-black">{author}</p>
+            <p className="font-medium text-gray-500">{role}</p>
           </div>
 
-          {/* Bottom-right decorative PNG image */}
+          {/* Decorative image bottom-right */}
           <Image
             src="/Test.png"
-            alt="Decorative"
+            alt=""
             width={130}
             height={130}
-            className="absolute bottom-4 right-4 opacity-50"
+            className="absolute bottom-4 right-4 opacity-40 pointer-events-none"
+            aria-hidden="true"
           />
 
-          {/* Decorative quote symbol */}
-          <div className="absolute bottom-0 right-0 opacity-10 text-[180px] leading-none pr-4 pb-2 select-none">
-            <span className="font-serif">”</span>
+          {/* Large quote symbol */}
+          <div className="absolute bottom-0 right-0 opacity-10 text-[180px] leading-none pr-4 pb-2 select-none font-serif z-0">
+            ”
           </div>
         </div>
       </div>
 
-      <style jsx>{`
-        .writing-vertical {
-          writing-mode: vertical-rl;
-          text-orientation: mixed;
-        }
+      {/* Navigation Dots */}
+      <div className="flex justify-center mt-10 space-x-3">
+        {testimonials.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentIndex(i)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              i === currentIndex ? "bg-black" : "bg-gray-400"
+            }`}
+            aria-label={`View testimonial ${i + 1}`}
+          />
+        ))}
+      </div>
 
-        /* Fade-in animation */
+      <style jsx>{`
         .fade-in {
           opacity: 0;
           animation: fadeInUp 1s forwards ease-out;
         }
-
         @keyframes fadeInUp {
           0% {
             opacity: 0;
@@ -128,14 +140,6 @@ export default function TestimonialsSection() {
             opacity: 1;
             transform: translateY(0);
           }
-        }
-
-        /* Floating hover effect */
-        .float-hover {
-          transition: transform 0.3s ease;
-        }
-        .float-hover:hover {
-          transform: translateY(-5px);
         }
       `}</style>
     </section>

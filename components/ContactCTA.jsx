@@ -10,9 +10,14 @@ export default function ContactCTA() {
   }, []);
 
   return (
-    <section className="bg-[#fcebe5] py-20 px-6 lg:px-20">
+    <section
+      className="bg-[#fcebe5] py-20 px-6 lg:px-20"
+      aria-labelledby="cta-heading"
+      role="region"
+    >
       <div className="max-w-4xl mx-auto text-center">
         <h2
+          id="cta-heading"
           data-aos="fade-up"
           className="text-4xl md:text-5xl font-bold text-black mb-6 leading-snug"
         >
@@ -34,6 +39,7 @@ export default function ContactCTA() {
           data-aos-delay="300"
           href="/contact-us"
           className="inline-block bg-[#ff5722] hover:bg-[#e64a19] text-white font-semibold px-6 py-3 rounded-md transition-all duration-300 shadow-md"
+          aria-label="Contact Us Today"
         >
           Contact Us Today →
         </a>
