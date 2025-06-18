@@ -16,28 +16,32 @@ const services = [
   {
     title: "Electrical Works",
     desc: "We handle all your electrical needs — from basic wiring to complex installations — with a focus on safety, compliance, and long-term reliability. Quality you can count on, power you can trust.",
-    image: "/img1.jpg",
+    image:
+      "https://wordpress.cloud1.me/lumitec/wp-content/uploads/2025/04/pexels-jose-andres-pacheco-cortes-3641213-5463587.jpg",
     iconImg: "/ser1.png",
     link: "/Electrical",
   },
   {
     title: "Home Automation",
     desc: "Step into the future of living with our smart home automation systems. Control lighting, temperature, and security — all from your fingertips — and enjoy true comfort and convenience.",
-    image: "/img1.jpg",
+    image:
+      "https://wordpress.cloud1.me/lumitec/wp-content/uploads/2025/04/pexels-mateusz-haberny-806274365-19238583.jpg",
     iconImg: "/ser3.png",
     link: "/Automation",
   },
   {
     title: "Mep Services",
     desc: "From seamless electrical layouts to efficient mechanical and plumbing systems, our MEP solutions ensure safe, reliable, and future-ready infrastructure for every smart space.",
-    image: "/img1.jpg",
+    image:
+      "https://wordpress.cloud1.me/lumitec/wp-content/uploads/2025/04/pexels-ar-abnoy-536397811-16509869.jpg",
     iconImg: "/ser4.png",
     link: "/Mep",
   },
   {
     title: "Fit Out Constructions",
     desc: "Bring your interior visions to life with our custom fit-out services. From planning to execution, we deliver stylish, functional, and future-ready spaces for homes, offices, and more.",
-    image: "/img1.jpg",
+    image:
+      "https://wordpress.cloud1.me/lumitec/wp-content/uploads/2025/04/pexels-rquiros-2219024.jpg",
     iconImg: "/ser5.png",
     link: "/Constructions",
   },

@@ -13,7 +13,7 @@ export default function ContactUs() {
         {" "}
         {/* adjust based on header height */}
         <AboutUsHero
-          imageSrc="/img1.jpg"
+          imageSrc="https://wordpress.cloud1.me/lumitec/wp-content/uploads/2025/04/levi-costa-q1H__5V937k-unsplash-scaled.jpg"
           title="Contact Us"
           breadcrumb={[{ label: "Home", href: "/" }, { label: "Contact us" }]}
         />

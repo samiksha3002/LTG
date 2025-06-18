@@ -21,7 +21,7 @@ export default function Showroom() {
           {/* Short Image */}
           <div className="w-1/2 h-[250px] overflow-hidden mt-8 animate-float">
             <Image
-              src="/img1.jpg"
+              src="https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183233/Interior2_x4y8ya.jpg"
               alt="Smart home interface"
               width={500}
               height={250}
@@ -33,7 +33,7 @@ export default function Showroom() {
           {/* Tall Image */}
           <div className="w-1/2 h-[400px] overflow-hidden animate-float">
             <Image
-              src="/img1.jpg"
+              src="https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182393/Comercial56_zqdyro.jpg"
               alt="Technician setting up smart lighting"
               width={500}
               height={400}

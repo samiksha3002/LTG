@@ -27,7 +27,7 @@ export default function LED() {
         paragraphs={[
           "At LTG, our MEP (Mechanical, Electrical, and Plumbing) services are designed to support and enhance lighting systems in every type of space. From smooth electrical layouts to efficient HVAC planning and plumbing integration, we ensure that every technical layer behind your lighting works flawlessly. Whether it's a home, hotel, office, or commercial site, our MEP solutions create a strong foundation for intelligent, safe, and future-ready lighting environments.",
         ]}
-        imageSrc="/img1.jpg"
+        imageSrc="https://wordpress.cloud1.me/lumitec/wp-content/uploads/2025/04/pexels-ar-abnoy-536397811-16509869.jpg"
         imageAlt="Smart Home Integration"
       />
       <WhyChooseLumitec
@@ -44,7 +44,8 @@ export default function LED() {
           text: "MEP design is more than just infrastructure — it’s the lifeblood of any functional space. We collaborate closely with architects, consultants, and developers to ensure our systems are seamlessly woven into the structure’s form and function. From early-stage schematics to final commissioning, our team ensures the MEP elements support and enhance the architectural experience — never conflict with it.",
           tagline:
             "We believe great engineering is invisible — present in performance, yet harmonious with the design.",
-          image: "/img1.jpg",
+          image:
+            "https://wordpress.cloud1.me/lumitec/wp-content/uploads/2025/04/ai-generated-modern-styled-entryway-scaled-e1745050934624.jpg",
           reverse: true,
         }}
       />
