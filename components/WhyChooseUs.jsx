@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function WhyChooseUs() {
   return (
     <section
-      className="relative bg-[#f8eae1] py-20 md:py-28 px-6 overflow-hidden"
+      className="relative bg-[#dcd8c7] py-20 md:py-28 px-6 overflow-hidden"
       aria-labelledby="why-us-title"
       itemScope
       itemType="https://schema.org/Organization"
