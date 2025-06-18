@@ -41,7 +41,7 @@ export default function TestimonialsSection() {
 
   return (
     <section
-      className="relative bg-[#f6e7e1] py-28 px-6 overflow-hidden fade-in"
+      className="relative bg-[#dcd8c7] py-28 px-6 overflow-hidden fade-in"
       aria-label="Customer Testimonials"
     >
       {/* Background pattern */}

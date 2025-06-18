@@ -53,7 +53,7 @@ export default function Footer() {
         />
       </Head>
 
-      <footer className="bg-[#f3c9aa] text-black pt-10 pb-8 px-4 md:px-6 lg:px-8">
+      <footer className="bg-[#dcd8c7] text-black pt-10 pb-8 px-4 md:px-6 lg:px-8">
         {/* Inner white box */}
         <div className="bg-white rounded-2xl p-10 md:p-10 lg:p-12 grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Column 1 */}

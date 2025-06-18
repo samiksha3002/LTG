@@ -11,7 +11,7 @@ export default function ContactCTA() {
 
   return (
     <section
-      className="bg-[#fcebe5] py-20 px-6 lg:px-20"
+      className="bg-[#dcd8c7] py-20 px-6 lg:px-20"
       aria-labelledby="cta-heading"
       role="region"
     >
