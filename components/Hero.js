@@ -6,7 +6,11 @@ import Link from "next/link";
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = ["/img1.jpg", "/hero2.jpg", "/hero3.jpg"];
+  const slides = [
+    "/img1.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182270/Interior100_gtmtl0.jpg",
+    "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182405/Interior103_gwziho.jpg",
+  ];
 
   // Auto Slide every 6 seconds
   useEffect(() => {
