@@ -9,7 +9,26 @@ const projects = [
   { src: "/Projects2.jpg", alt: "Modern Kitchen" },
   { src: "/Projects3.jpg", alt: "Luxury Dining" },
   { src: "/Projects4.jpg", alt: "Cozy Space" },
-  { src: "/Projects5.jpg", alt: "Cozy Space" },
+  {
+    src: "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182397/Commercial106_dwekki.jpg",
+    alt: "Cozy Space",
+  },
+  {
+    src: "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182554/Commercial49_m86msf.jpg",
+    alt: "Cozy Space",
+  },
+  {
+    src: "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750182805/Interior76_n8rpxn.jpg",
+    alt: "Cozy Space",
+  },
+  {
+    src: "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183105/Interior51_hmj3cl.jpg",
+    alt: "Cozy Space",
+  },
+  {
+    src: "https://res.cloudinary.com/dl4nqxxfp/image/upload/v1750183634/Commercial11_rqfsxj.jpg",
+    alt: "Cozy Space",
+  },
 ];
 
 export default function ProjectsShowcase() {

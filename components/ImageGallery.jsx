@@ -71,10 +71,11 @@ export default function ImageGallery() {
   const [selectedAlbum, setSelectedAlbum] = useState("Commercial");
   const [visibleCount, setVisibleCount] = useState(10);
   const [fade, setFade] = useState(true);
+  const [popupImage, setPopupImage] = useState(null);
 
   useEffect(() => {
     setFade(false);
-    setVisibleCount(10); // Reset count when album changes
+    setVisibleCount(10);
     const timeout = setTimeout(() => setFade(true), 200);
     return () => clearTimeout(timeout);
   }, [selectedAlbum]);
@@ -86,9 +87,8 @@ export default function ImageGallery() {
 
   const currentImages = albums[selectedAlbum].slice(0, visibleCount);
   const canLoadMore = visibleCount < albums[selectedAlbum].length;
-
   return (
-    <section className="bg-[#fcfcfc] py-12 px-4 sm:px-6 lg:px-12">
+    <section className="bg-[#fcfcfc] py-12 px-4 sm:px-6 lg:px-12 relative">
       {/* Tabs */}
       <div className="flex justify-center gap-4 mb-10 flex-wrap">
         {Object.keys(albums).map((album) => (
@@ -115,7 +115,8 @@ export default function ImageGallery() {
         {currentImages.map((src, index) => (
           <div
             key={index}
-            className="relative w-full h-48 sm:h-60 md:h-72 overflow-hidden rounded-md shadow-md"
+            className="relative w-full h-48 sm:h-60 md:h-72 overflow-hidden rounded-md shadow-md cursor-pointer"
+            onClick={() => setPopupImage(src)}
           >
             <Image
               src={optimizeUrl(src)}
@@ -130,7 +131,7 @@ export default function ImageGallery() {
         ))}
       </div>
 
-      {/* Load More Button */}
+      {/* Load More */}
       {canLoadMore && (
         <div className="mt-10 text-center">
           <button
@@ -139,6 +140,28 @@ export default function ImageGallery() {
           >
             Load More
           </button>
+        </div>
+      )}
+
+      {/* Popup Modal */}
+      {popupImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 px-4">
+          <div className="relative max-w-6xl w-full max-h-[90vh] overflow-hidden rounded-lg">
+            <button
+              onClick={() => setPopupImage(null)}
+              className="absolute top-4 right-4 z-50 text-white text-3xl bg-black bg-opacity-50 hover:bg-opacity-75 transition p-2 rounded-full"
+            >
+              &times;
+            </button>
+            <div className="relative w-full h-[80vh]">
+              <Image
+                src={popupImage}
+                alt="Full Size Image"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
         </div>
       )}
     </section>
